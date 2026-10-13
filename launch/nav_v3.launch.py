@@ -430,7 +430,9 @@ def generate_launch_description():
             '/initialpose',
             'geometry_msgs/msg/PoseWithCovarianceStamped',
             # e6 - Home
-            '{"header": {"frame_id": "map"}, "pose": {"pose": {"position": {"x": 6.6810, "y": -5.1279, "z": 0.0}, "orientation": {"x": 0.0, "y": 0.0, "z": 0.999671, "w": 0.025644}}, "covariance": [0.25,0,0,0,0,0,0,0.25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.068]}}'
+            # '{"header": {"frame_id": "map"}, "pose": {"pose": {"position": {"x": 6.6810, "y": -5.1279, "z": 0.0}, "orientation": {"x": 0.0, "y": 0.0, "z": 0.999671, "w": 0.025644}}, "covariance": [0.25,0,0,0,0,0,0,0.25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.068]}}'
+            # e6 - Elevator
+            '{"header": {"frame_id": "map"}, "pose": {"pose": {"position": {"x": 1.0142, "y": 0.4203, "z": 0.0054}, "orientation": {"x": 0.0, "y": 0.0, "z": -0.196155, "w": 0.980573}}, "covariance": [0.25,0,0,0,0,0,0,0.25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.068]}}'
             # a1 - Sanh chinh
             # '{"header": {"frame_id": "map"}, "pose": {"pose": {"position": {"x": -45.612, "y": 7.584, "z": 0.0}, "orientation": {"x": 0.0, "y": 0.0, "z": -0.918, "w": 0.396}}, "covariance": [0.25,0,0,0,0,0,0,0.25,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0.068]}}'
         ],
