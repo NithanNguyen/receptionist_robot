@@ -1,0 +1,36 @@
+Tôi vừa gửi cho bạn 1 file urdf của robot cũ, hiện tại tôi muốn viết lại cho phiên bản mới chỉ có 2 bánh drive và 1 caster wheel với thông số chi tiết như sao (tính trên bounding của mỗi chi tiết):
+- Model.stl (phần khung tổng thể của robot):
++ Size[mm]: x = 38.000, y = 38.000, z = 128.577
++ Pos. [px]: 0.000 0.000 0.000
++ Rot. [°]:  0.000 0.000 0.000
++ Volume: 7,839.308 [mm3]
++ Area: 59,834.773 [mm2]
++ Triangles: 98384
++ Unit in mm
+
+- caster_wheel.stl
++ Size[mm]: x = 12.515, y = 7.818, z = 10.499
++ Pos. [px]: 0.000 0.000 0.000
++ Rot. [°]:  0.000 0.000 0.000
++ Volume: 7155.200 [mm3]
++ Area: 732.907 [mm2]
++ Triangles: 2824
++ Unit in mm
+
+- wheel_left.stl
++ Size[mm]: x = 16.510, y = 4.109, z = 16.510
++ Pos. [px]: 0.000 0.000 0.000
++ Rot. [°]:  0.000 0.000 0.000
++ Volume: 670.111 [mm3]
++ Area: 568.236 [mm2]
++ Triangles: 978
++ Unit in mm
+
+- wheel_right.stl
++ Size[mm]: x = 16.510, y = 4.109, z = 16.510
++ Pos. [px]: 0.000 0.000 0.000
++ Rot. [°]:  0.000 0.000 0.000
++ Volume: 670.111 [mm3]
++ Area: 568.236 [mm2]
++ Triangles: 978
++ Unit in mm
