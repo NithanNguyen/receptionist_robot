@@ -1,6 +1,6 @@
 <div align="center">
 
-# Receptionist Robot
+# Mobile RobotRobot - ASIC LAB
 
 **Checkpoint-driven indoor navigation for a differential-drive service robot — 2D LiDAR, IMU and a six-transducer ultrasonic array fused on-board a Jetson AGX Xavier under ROS 2 Foxy.**
 
