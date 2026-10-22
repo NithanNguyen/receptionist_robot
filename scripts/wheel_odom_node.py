@@ -63,7 +63,7 @@ STM32_STEER_MAX = 60
 MAX_LINEAR_VEL  = 0.7
 # Vận tốc góc tối đa cho phép robot xoay (Yaw) (rad/s)
 # Công thức w = (2 * v_wheel) / wheel_base. 
-MAX_ANGULAR_VEL = 1.5
+MAX_ANGULAR_VEL = 1.2
 
 
 class WheelOdomNode(Node):
