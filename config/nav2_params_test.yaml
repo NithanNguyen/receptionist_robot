@@ -159,13 +159,13 @@ controller_server:
       # v_max phần cứng = 0.5 m/s; giảm 30 % vì an toàn → 0.346 m/s
       min_vel_x: 0.0               # [m/s] không điều khiển lùi
       min_vel_y: 0.0               # [m/s] không dịch ngang (dẫn động vi sai)
-      max_vel_x: 0.6               # [m/s] giới hạn vận tốc tiến
+      max_vel_x: 0.7               # [m/s] giới hạn vận tốc tiến
       max_vel_y: 0.0               # [m/s] không dịch ngang (dẫn động vi sai)
       max_vel_theta: 0.8           # [rad/s] giới hạn tốc độ góc (≈ giới hạn phần cứng)
       min_vel_theta: -0.8          # [rad/s] giới hạn tốc độ góc ngược (≈ giới hạn phần cứng)
       min_speed_theta: 0.3         # [rad/s] tốc độ góc tối thiểu để thắng ma sát tĩnh và xoay tại chỗ
       min_speed_xy: 0.0            # [m/s] tốc độ XY kết hợp tối thiểu
-      max_speed_xy: 0.4            # [m/s] tốc độ XY kết hợp tối đa
+      max_speed_xy: 0.7            # [m/s] tốc độ XY kết hợp tối đa
 
       # ── Giới hạn gia tốc / giảm tốc ──────────────────────────────────────
       # Dốc tăng tốc nhẹ nhàng để ngăn trượt bánh và giảm nhiễu rung IMU.
