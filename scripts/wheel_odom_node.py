@@ -239,15 +239,6 @@ class WheelOdomNode(Node):
         odom.twist.twist.linear.x = v
         odom.twist.twist.angular.z = w
 
-        # odom.twist.covariance = [
-        #     0.03, 0,    0,    0,    0,    0,        # var(vx) - tin cậy hơn vì có encoder
-        #     0,    1e6,  0,    0,    0,    0,        # var(vy) - gần như không đo được vì diff drive
-        #     0,    0,    1e6,  0,    0,    0,        # var(vz) - không đo được vì robot di chuyển trên mặt phẳng
-        #     0,    0,    0,    1e6,  0,    0,        # var(wx) - không đo được vì robot di chuyển trên mặt phẳng
-        #     0,    0,    0,    0,    1e6,  0,        # var(wy) - không đo được vì robot di chuyển trên mặt phẳng
-        #     0,    0,    0,    0,    0,    0.05      # var(wz) - tin cậy hơn vì có encoder
-        # ]
-
         self.odom_pub.publish(odom)
 
         # Chú ý: Vì bạn dùng robot_localization (EKF) nên publish_tf nên bằng False
