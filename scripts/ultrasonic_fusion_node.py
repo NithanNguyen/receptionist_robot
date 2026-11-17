@@ -17,7 +17,7 @@ SENSOR_POSES = {
     'us_bot_right': (0.29, -0.18, 0.0),
 }
 
-BEAM_HALF_ANGLE_RAD = math.radians(15.0)
+BEAM_HALF_ANGLE_RAD = math.radians(22.0)
 BEAM_RAYS = 7
 
 class UltrasonicFusionNode(Node):
