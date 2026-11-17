@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
 // ============================================================================
-//  ESP32 Ultrasonic Bridge - 6-channel HC-SR04 sequential scanner
+//  ESP32 Ultrasonic Bridge - 6-channel HY-SRF05 sequential scanner
 //  Fixes acoustic cross-talk / early-echo artefacts observed in reflective
 //  corridor environments (all sensors latching a stable ~0.8 m false reading).
 //
@@ -12,7 +12,7 @@
 //       (and its corridor reverberation) fully decays before the next sensor
 //       fires. This is the root-cause fix for cross-talk.
 //    3. Range clamping: echoes above MAX_VALID_CM -> NO_ECHO_CM (clear);
-//       echoes below the HC-SR04 physical floor (~2 cm) -> NO_ECHO_CM.
+//       echoes below the HY-SRF05 physical floor (~2 cm) -> NO_ECHO_CM.
 //       Real near obstacles (e.g. 15 cm) are preserved -- no near blind zone.
 //    4. Frame period is now decoupled from the scan: the frame is emitted at a
 //       fixed rate carrying the most recent completed value per sensor.
@@ -42,9 +42,9 @@ const uint8_t ECHO[] = {27, 33, 14, 23, 12, 26};
 #define SETTLING_US      30000UL // silence after each measurement [us] (~10 m decay)
 #define ECHO_START_TO_US 25000UL // max wait for echo rising edge [us] (~4.3 m)
 #define ECHO_END_TO_US   25000UL // max echo pulse width [us] (~4.3 m one-way)
-#define MIN_VALID_CM     1       // HC-SR04 physical floor only; real near
+#define MIN_VALID_CM     1       // HY-SRF05 physical floor only; real near
                                  // obstacles (e.g. 15 cm) are KEPT, not discarded
-#define MAX_VALID_CM     200     // HC-SR04 practical ceiling; above -> NO_ECHO_CM
+#define MAX_VALID_CM     200     // HY-SRF05 practical ceiling; above -> NO_ECHO_CM
 #define NO_ECHO_CM       999     // sentinel: clear / no return
 
 // ---- Per-sensor state machine ----------------------------------------------
@@ -114,7 +114,7 @@ void serviceActiveSensor() {
       if (digitalRead(ECHO[i]) == LOW) {
         long d = (long)(now - s.echoT) / 58;  // us -> cm
         if (d < MIN_VALID_CM) {
-          // Below HC-SR04 physical floor (~2 cm): unmeasurable, treat as clear.
+          // Below HY-SRF05 physical floor (~2 cm): unmeasurable, treat as clear.
           // NOTE: this does NOT create a near blind zone -- a real 15 cm
           // obstacle yields d=15 (>= MIN_VALID_CM) and is reported correctly.
           s.distCM = NO_ECHO_CM;
