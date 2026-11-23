@@ -23,6 +23,7 @@ BEAM_RAYS = 7
 class UltrasonicFusionNode(Node):
 
     COSTMAP_RANGE_MAX = 2.0
+    SCAN_RANGE_MAX    = 2.4   # tính từ tâm robot; ≥ 2.34 m để tia mép ngoài ở d = 2 m không bị cắt
     FILTER_WINDOW     = 5
     RELIABLE_MAX    = 2.0
     CONSISTENCY_MIN = 3
@@ -111,7 +112,7 @@ class UltrasonicFusionNode(Node):
                 scan_angle = math.atan2(oy, ox)
                 scan_dist  = math.hypot(ox, oy)
 
-                if scan_dist > self.COSTMAP_RANGE_MAX:
+                if scan_dist > self.SCAN_RANGE_MAX:
                     continue
 
                 idx = int(round(
@@ -128,7 +129,7 @@ class UltrasonicFusionNode(Node):
         scan.time_increment  = 0.0
         scan.scan_time       = 0.1
         scan.range_min       = 0.01
-        scan.range_max       = self.COSTMAP_RANGE_MAX
+        scan.range_max       = self.SCAN_RANGE_MAX
         scan.ranges          = ranges
 
         self.scan_pub.publish(scan)
